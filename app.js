@@ -15,7 +15,7 @@ const state = {
   selectedRunId: null,
   sourceLabel: "Loading",
   search: "",
-  sortKey: "guardScore",
+  sortKey: "f1",
   provider: "all",
   pack: "all",
   modelType: "all",
@@ -1071,6 +1071,8 @@ async function switchModality() {
       loadModelsMeta(),
     ]);
     state.selectedRunId = null;
+    state.sortKey = state.modality === "code" ? "guardScore" : "f1";
+    if (el.sortSelect) el.sortSelect.value = state.sortKey;
     el.compareSelects.forEach((s) => { s.value = ""; });
     setDataset(payload, "Committed data", meta);
   } catch (err) {
@@ -1086,6 +1088,7 @@ async function switchModality() {
 async function init() {
   bindControls();
   initReveal();
+  if (el.sortSelect) el.sortSelect.value = state.sortKey;
 
   try {
     const [payload, meta] = await Promise.all([
