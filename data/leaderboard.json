@@ -846,8 +846,8 @@
     },
     {
       "run_id": "2026-03-23-anthropic-haiku-4-5-full-30-v1",
-      "run_name": "Anthropic Haiku 4.5 Full Benchmark",
-      "model_name": "Anthropic Haiku 4.5",
+      "run_name": "Claude Haiku 4.5 Full Benchmark",
+      "model_name": "Claude Haiku 4.5",
       "provider": "Anthropic",
       "adapter": "anthropic",
       "benchmark_pack": "full-45",
@@ -8397,16 +8397,11 @@
         "params_b": 31,
         "architecture": "Gemma4ForConditionalGeneration",
         "dtype": "bfloat16",
-        "inference_engine": "vllm-0.19.0",
-        "hardware": "NVIDIA B300 SXM6 275GB",
-        "gpu_count": 1,
-        "tensor_parallel": 1,
         "latency_ms_mean": 2.83,
         "latency_ms_median": 1.79,
         "latency_ms_p95": 6.58,
         "latency_ms_p99": 20.68,
-        "total_samples": 678116,
-        "throughput_tokens_per_sec": 50000
+        "total_samples": 678116
       }
     }
   ],
