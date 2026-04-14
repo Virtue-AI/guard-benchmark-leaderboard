@@ -167,7 +167,7 @@
       "output_tokens_per_sec": 116.8
     },
     "VirtueCode 35B": {
-      "parameters": "34.5B",
+      "parameters": "35B",
       "is_open_source": false,
       "source": "huggingface",
       "huggingface_id": "Virtue-AI-HUB/VirtueCode_new",
@@ -232,7 +232,7 @@
       "output_tokens_per_sec": 50.2
     },
     "DeepSeek-V3": {
-      "parameters": null,
+      "parameters": "671B",
       "is_open_source": false,
       "source": "api",
       "huggingface_id": null,
