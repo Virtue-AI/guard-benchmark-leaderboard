@@ -1,0 +1,305 @@
+{
+  "models": {
+    "VirtueGuard Text 1B": {
+      "parameters": "1B",
+      "is_open_source": false,
+      "source": "huggingface",
+      "huggingface_id": "Virtue-AI-HUB/ruilin-servicenow-gemma3",
+      "avg_latency_ms": 12,
+      "cost_per_1m_tokens": null
+    },
+    "VirtueGuard Text 0.6B": {
+      "parameters": "0.6B",
+      "is_open_source": false,
+      "source": "huggingface",
+      "huggingface_id": "Virtue-AI-HUB/TextGuard-Qwen2.5-0.5B-Glean",
+      "avg_latency_ms": 9,
+      "cost_per_1m_tokens": null
+    },
+    "Granite Guardian 3.1 8B": {
+      "parameters": "8B",
+      "is_open_source": true,
+      "source": "huggingface",
+      "huggingface_id": "ibm-granite/granite-guardian-3.1-8b",
+      "avg_latency_ms": 23,
+      "cost_per_1m_tokens": null
+    },
+    "WildGuard": {
+      "parameters": "7B",
+      "is_open_source": true,
+      "source": "huggingface",
+      "huggingface_id": "allenai/wildguard",
+      "avg_latency_ms": 65,
+      "cost_per_1m_tokens": null
+    },
+    "MD-Judge": {
+      "parameters": "7B",
+      "is_open_source": true,
+      "source": "huggingface",
+      "huggingface_id": "OpenSafetyLab/MD-Judge-v0.1",
+      "avg_latency_ms": 66,
+      "cost_per_1m_tokens": null
+    },
+    "Granite Guardian 3.2 5B": {
+      "parameters": "5B",
+      "is_open_source": true,
+      "source": "huggingface",
+      "huggingface_id": "ibm-granite/granite-guardian-3.2-5b",
+      "avg_latency_ms": 38,
+      "cost_per_1m_tokens": null
+    },
+    "Qwen3Guard-Gen-4B": {
+      "parameters": "4B",
+      "is_open_source": true,
+      "source": "huggingface",
+      "huggingface_id": "Qwen/Qwen3Guard-Gen-4B",
+      "avg_latency_ms": 37,
+      "cost_per_1m_tokens": null
+    },
+    "GPT-4o-mini": {
+      "parameters": null,
+      "is_open_source": false,
+      "source": "api",
+      "huggingface_id": null,
+      "avg_latency_ms": 463,
+      "cost_per_1m_tokens": 0.15,
+      "cost_per_1m_tokens_output": 0.6
+    },
+    "Qwen3Guard-Gen-0.6B": {
+      "parameters": "0.6B",
+      "is_open_source": true,
+      "source": "huggingface",
+      "huggingface_id": "Qwen/Qwen3Guard-Gen-0.6B",
+      "avg_latency_ms": 24,
+      "cost_per_1m_tokens": null
+    },
+    "GPT-5.4-mini": {
+      "parameters": null,
+      "is_open_source": false,
+      "source": "api",
+      "huggingface_id": null,
+      "avg_latency_ms": 642,
+      "cost_per_1m_tokens": 0.75,
+      "cost_per_1m_tokens_output": 4.5
+    },
+    "Anthropic Haiku 4.5": {
+      "parameters": null,
+      "is_open_source": false,
+      "source": "api",
+      "huggingface_id": null,
+      "avg_latency_ms": 1258,
+      "cost_per_1m_tokens": 1.0,
+      "cost_per_1m_tokens_output": 5.0
+    },
+    "Llama Guard 2": {
+      "parameters": "8B",
+      "is_open_source": true,
+      "source": "huggingface",
+      "huggingface_id": "meta-llama/Meta-Llama-Guard-2-8B",
+      "avg_latency_ms": 29,
+      "cost_per_1m_tokens": null
+    },
+    "VirtueGuard Text 0.4B": {
+      "parameters": "0.4B",
+      "is_open_source": false,
+      "source": "huggingface",
+      "huggingface_id": "Virtue-AI-HUB/Virtue_Textguard_classifer",
+      "avg_latency_ms": 9,
+      "cost_per_1m_tokens": null
+    },
+    "Prompt Guard 86M": {
+      "parameters": "86M",
+      "is_open_source": true,
+      "source": "huggingface",
+      "huggingface_id": "meta-llama/Prompt-Guard-86M",
+      "avg_latency_ms": 8,
+      "cost_per_1m_tokens": null
+    },
+    "ToxicChat T5": {
+      "parameters": "0.8B",
+      "is_open_source": true,
+      "source": "huggingface",
+      "huggingface_id": "lmsys/toxicchat-t5-large-v1.0",
+      "avg_latency_ms": 30,
+      "cost_per_1m_tokens": null
+    },
+    "ShieldGemma 9B": {
+      "parameters": "9B",
+      "is_open_source": true,
+      "source": "huggingface",
+      "huggingface_id": "google/shieldgemma-9b",
+      "avg_latency_ms": 21,
+      "cost_per_1m_tokens": null
+    },
+    "Llama Prompt Guard 2 22M": {
+      "parameters": "22M",
+      "is_open_source": true,
+      "source": "huggingface",
+      "huggingface_id": "meta-llama/Llama-Prompt-Guard-2-22M",
+      "avg_latency_ms": 6,
+      "cost_per_1m_tokens": null
+    },
+    "Llama Guard 3 1B": {
+      "parameters": "1B",
+      "is_open_source": true,
+      "source": "huggingface",
+      "huggingface_id": "meta-llama/Llama-Guard-3-1B",
+      "avg_latency_ms": 25,
+      "cost_per_1m_tokens": null
+    },
+    "Llama Guard 3 8B": {
+      "parameters": "8B",
+      "is_open_source": true,
+      "source": "huggingface",
+      "huggingface_id": "meta-llama/Llama-Guard-3-8B",
+      "avg_latency_ms": 34,
+      "cost_per_1m_tokens": null
+    },
+    "Claude Haiku 4.5": {
+      "parameters": null,
+      "is_open_source": false,
+      "source": "api",
+      "huggingface_id": null,
+      "avg_latency_ms": 5948,
+      "cost_per_1m_tokens": 1.0,
+      "cost_per_1m_tokens_output": 5.0,
+      "avg_completion_tokens": 695,
+      "output_tokens_per_sec": 116.8
+    },
+    "VirtueCode 35B": {
+      "parameters": "34.5B (2.9B active)",
+      "is_open_source": false,
+      "source": "huggingface",
+      "huggingface_id": "Virtue-AI-HUB/VirtueCode_new",
+      "avg_latency_ms": 2672,
+      "cost_per_1m_tokens": null,
+      "avg_completion_tokens": 739,
+      "output_tokens_per_sec": 276.4
+    },
+    "GPT-4o": {
+      "parameters": null,
+      "is_open_source": false,
+      "source": "api",
+      "huggingface_id": null,
+      "avg_latency_ms": 606,
+      "cost_per_1m_tokens": 2.5,
+      "cost_per_1m_tokens_output": 10.0,
+      "avg_completion_tokens": 138,
+      "output_tokens_per_sec": 227.4
+    },
+    "GPT-5.3": {
+      "parameters": null,
+      "is_open_source": false,
+      "source": "api",
+      "huggingface_id": null,
+      "avg_latency_ms": 1853,
+      "cost_per_1m_tokens": 2.5,
+      "cost_per_1m_tokens_output": 10.0,
+      "avg_completion_tokens": 71,
+      "output_tokens_per_sec": 38.1
+    },
+    "GPT-5.4": {
+      "parameters": null,
+      "is_open_source": false,
+      "source": "api",
+      "huggingface_id": null,
+      "avg_latency_ms": 869,
+      "cost_per_1m_tokens": 2.5,
+      "cost_per_1m_tokens_output": 10.0,
+      "avg_completion_tokens": 18,
+      "output_tokens_per_sec": 20.3
+    },
+    "GPT-5.4 (high)": {
+      "parameters": null,
+      "is_open_source": false,
+      "source": "api",
+      "huggingface_id": null,
+      "avg_latency_ms": 5293,
+      "cost_per_1m_tokens": 2.5,
+      "cost_per_1m_tokens_output": 10.0,
+      "avg_completion_tokens": 623,
+      "output_tokens_per_sec": 117.7
+    },
+    "Claude Opus 4.6": {
+      "parameters": null,
+      "is_open_source": false,
+      "source": "api",
+      "huggingface_id": null,
+      "avg_latency_ms": 11204,
+      "cost_per_1m_tokens": 15.0,
+      "cost_per_1m_tokens_output": 75.0,
+      "avg_completion_tokens": 562,
+      "output_tokens_per_sec": 50.2
+    },
+    "DeepSeek-V3": {
+      "parameters": null,
+      "is_open_source": false,
+      "source": "api",
+      "huggingface_id": null,
+      "avg_latency_ms": 11692,
+      "cost_per_1m_tokens": 0.27,
+      "cost_per_1m_tokens_output": 1.1,
+      "avg_completion_tokens": 294,
+      "output_tokens_per_sec": 25.1
+    },
+    "DeepSeek-R1-Distill-Qwen-7B": {
+      "parameters": "7B",
+      "is_open_source": true,
+      "source": "huggingface",
+      "huggingface_id": "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B",
+      "avg_latency_ms": 926,
+      "cost_per_1m_tokens": null
+    },
+    "QwQ-32B": {
+      "parameters": "32B",
+      "is_open_source": true,
+      "source": "huggingface",
+      "huggingface_id": "Qwen/QwQ-32B",
+      "avg_latency_ms": 3675,
+      "cost_per_1m_tokens": null
+    },
+    "OpenAI Omni-Moderation": {
+      "parameters": null,
+      "is_open_source": false,
+      "source": "api",
+      "huggingface_id": null,
+      "avg_latency_ms": 711,
+      "cost_per_1m_tokens": null
+    },
+    "Gemma 4 31B-IT": {
+      "parameters": "31B",
+      "is_open_source": true,
+      "source": "huggingface",
+      "huggingface_id": "google/gemma-4-31B-it",
+      "avg_latency_ms": 41,
+      "cost_per_1m_tokens": null
+    },
+    "Gemma 4 31B": {
+      "parameters": "31B",
+      "is_open_source": true,
+      "source": "huggingface",
+      "huggingface_id": "google/gemma-4-31B-it",
+      "avg_latency_ms": 114,
+      "cost_per_1m_tokens": null
+    }
+  },
+  "dataset_composition": {
+    "Advbench Behaviors": "unsafe_only",
+    "Advbench Strings": "unsafe_only",
+    "Cat QA": "unsafe_only",
+    "Do Anything Now Questions": "unsafe_only",
+    "Donotanswer": "unsafe_only",
+    "Harmbench Behaviors": "unsafe_only",
+    "Harmful Q": "unsafe_only",
+    "Harmful QA Questions": "unsafe_only",
+    "I Cona": "unsafe_only",
+    "I Controversial": "unsafe_only",
+    "I Malicious Instructions": "unsafe_only",
+    "Malicious Instruct": "unsafe_only",
+    "Mitre": "unsafe_only",
+    "Niche Hazard QA": "unsafe_only",
+    "Simple Safety Tests": "unsafe_only",
+    "Strongreject Instructions": "unsafe_only",
+    "Tdc Red Teaming": "unsafe_only"
+  }
+}

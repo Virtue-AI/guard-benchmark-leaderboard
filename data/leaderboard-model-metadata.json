@@ -1,0 +1,166 @@
+{
+  "models": {
+    "VirtueGuard Gemma3 1B": {
+      "parameters": "1B",
+      "is_open_source": false,
+      "source": "huggingface",
+      "huggingface_id": "Virtue-AI-HUB/ruilin-servicenow-gemma3",
+      "avg_latency_ms": 22,
+      "cost_per_1m_tokens": null
+    },
+    "VirtueGuard Qwen3 0.6B Varlen": {
+      "parameters": "0.6B",
+      "is_open_source": false,
+      "source": "huggingface",
+      "huggingface_id": "Virtue-AI-HUB/TextGuard-Qwen2.5-0.5B-Glean",
+      "avg_latency_ms": 16,
+      "cost_per_1m_tokens": null
+    },
+    "Granite Guardian 3.1 8B": {
+      "parameters": "8B",
+      "is_open_source": true,
+      "source": "huggingface",
+      "huggingface_id": "ibm-granite/granite-guardian-3.1-8b",
+      "avg_latency_ms": 31,
+      "cost_per_1m_tokens": null
+    },
+    "WildGuard": {
+      "parameters": "7B",
+      "is_open_source": true,
+      "source": "huggingface",
+      "huggingface_id": "allenai/wildguard",
+      "avg_latency_ms": 49,
+      "cost_per_1m_tokens": null
+    },
+    "MD-Judge": {
+      "parameters": "7B",
+      "is_open_source": true,
+      "source": "huggingface",
+      "huggingface_id": "OpenSafetyLab/MD-Judge-v0.1",
+      "avg_latency_ms": 63,
+      "cost_per_1m_tokens": null
+    },
+    "Granite Guardian 3.2 5B": {
+      "parameters": "5B",
+      "is_open_source": true,
+      "source": "huggingface",
+      "huggingface_id": "ibm-granite/granite-guardian-3.2-5b",
+      "avg_latency_ms": 30,
+      "cost_per_1m_tokens": null
+    },
+    "Qwen3Guard-Gen-4B": {
+      "parameters": "4B",
+      "is_open_source": true,
+      "source": "huggingface",
+      "huggingface_id": "Qwen/Qwen3Guard-Gen-4B",
+      "avg_latency_ms": 110,
+      "cost_per_1m_tokens": null
+    },
+    "GPT-4o-mini": {
+      "parameters": null,
+      "is_open_source": false,
+      "source": "api",
+      "huggingface_id": null,
+      "avg_latency_ms": 439,
+      "cost_per_1m_tokens": 0.15,
+      "cost_per_1m_tokens_output": 0.6
+    },
+    "Qwen3Guard-Gen-0.6B": {
+      "parameters": "0.6B",
+      "is_open_source": true,
+      "source": "huggingface",
+      "huggingface_id": "Qwen/Qwen3Guard-Gen-0.6B",
+      "avg_latency_ms": 84,
+      "cost_per_1m_tokens": null
+    },
+    "GPT-5-mini": {
+      "parameters": null,
+      "is_open_source": false,
+      "source": "api",
+      "huggingface_id": null,
+      "avg_latency_ms": 822,
+      "cost_per_1m_tokens": 0.25,
+      "cost_per_1m_tokens_output": 2.0
+    },
+    "Llama Guard 2": {
+      "parameters": "8B",
+      "is_open_source": true,
+      "source": "huggingface",
+      "huggingface_id": "meta-llama/Meta-Llama-Guard-2-8B",
+      "avg_latency_ms": 37,
+      "cost_per_1m_tokens": null
+    },
+    "Virtue Textguard Classifier": {
+      "parameters": "0.4B",
+      "is_open_source": false,
+      "source": "huggingface",
+      "huggingface_id": "Virtue-AI-HUB/Virtue_Textguard_classifer",
+      "avg_latency_ms": 4,
+      "cost_per_1m_tokens": null
+    },
+    "Prompt Guard 86M": {
+      "parameters": "86M",
+      "is_open_source": true,
+      "source": "huggingface",
+      "huggingface_id": "meta-llama/Prompt-Guard-86M",
+      "avg_latency_ms": 8,
+      "cost_per_1m_tokens": null
+    },
+    "ToxicChat T5": {
+      "parameters": "0.8B",
+      "is_open_source": true,
+      "source": "huggingface",
+      "huggingface_id": "lmsys/toxicchat-t5-large-v1.0",
+      "avg_latency_ms": 30,
+      "cost_per_1m_tokens": null
+    },
+    "ShieldGemma 9B": {
+      "parameters": "9B",
+      "is_open_source": true,
+      "source": "huggingface",
+      "huggingface_id": "google/shieldgemma-9b",
+      "avg_latency_ms": 73,
+      "cost_per_1m_tokens": null
+    },
+    "Llama Prompt Guard 2 22M": {
+      "parameters": "22M",
+      "is_open_source": true,
+      "source": "huggingface",
+      "huggingface_id": "meta-llama/Llama-Prompt-Guard-2-22M",
+      "avg_latency_ms": 6,
+      "cost_per_1m_tokens": null
+    },
+    "Llama Guard 3 1B": {
+      "parameters": "1B",
+      "is_open_source": true,
+      "source": "huggingface",
+      "huggingface_id": "meta-llama/Llama-Guard-3-1B",
+      "avg_latency_ms": 16,
+      "cost_per_1m_tokens": null
+    },
+    "Llama Guard 3 8B": {
+      "parameters": "8B",
+      "is_open_source": true,
+      "source": "huggingface",
+      "huggingface_id": "meta-llama/Llama-Guard-3-8B",
+      "avg_latency_ms": 47,
+      "cost_per_1m_tokens": null
+    },
+    "OpenAI Omni-Moderation": {
+      "parameters": null,
+      "is_open_source": false,
+      "source": "api",
+      "huggingface_id": null,
+      "avg_latency_ms": 711,
+      "cost_per_1m_tokens": null
+    },
+    "Gemma 4 31B": {
+      "parameters": "31B",
+      "is_open_source": true,
+      "source": "huggingface",
+      "huggingface_id": "google/gemma-4-31B-it",
+      "avg_latency_ms": 114,
+      "cost_per_1m_tokens": null
+    }
+  }
+}
