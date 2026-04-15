@@ -4,8 +4,8 @@
   "runs": [
     {
       "run_id": "2026-04-03-virtuecode-code-vuln-16k",
-      "run_name": "VirtueCode - Code Vuln Benchmark (16K)",
-      "model_name": "VirtueCode",
+      "run_name": "VirtueGuard-Code - Code Vuln Benchmark (16K)",
+      "model_name": "VirtueGuard-Code",
       "provider": "Virtue AI",
       "adapter": "vllm",
       "benchmark_pack": "code_vuln-v1",

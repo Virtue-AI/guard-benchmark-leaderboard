@@ -35,7 +35,7 @@ MODEL_MAP = {
         "vllm",
     ),
     "qwq-32b": ("QwQ-32B", "Alibaba", "vllm"),
-    "virtuecode": ("VirtueCode", "Virtue AI", "vllm"),
+    "virtuecode": ("VirtueGuard-Code", "Virtue AI", "vllm"),
 }
 
 # Map internal dataset directory name → display name

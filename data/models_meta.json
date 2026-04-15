@@ -166,7 +166,7 @@
       "avg_completion_tokens": 695,
       "output_tokens_per_sec": 116.8
     },
-    "VirtueCode": {
+    "VirtueGuard-Code": {
       "parameters": null,
       "is_open_source": false,
       "source": "huggingface",

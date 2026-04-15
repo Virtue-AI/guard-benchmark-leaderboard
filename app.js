@@ -608,7 +608,7 @@ const COMPARE_BG = [
 ];
 const COMPARE_DEFAULTS_BY_MODALITY = {
   text: ["VirtueGuard Text 1B", "GPT-5.4-mini"],
-  code: ["VirtueCode", "GPT-5.4"],
+  code: ["VirtueGuard-Code", "GPT-5.4"],
 };
 
 function setupCompareSelectors() {
