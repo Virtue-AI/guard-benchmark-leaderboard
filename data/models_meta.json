@@ -166,8 +166,8 @@
       "avg_completion_tokens": 695,
       "output_tokens_per_sec": 116.8
     },
-    "VirtueCode 35B": {
-      "parameters": "35B",
+    "VirtueCode": {
+      "parameters": null,
       "is_open_source": false,
       "source": "huggingface",
       "huggingface_id": "Virtue-AI-HUB/VirtueCode_new",
