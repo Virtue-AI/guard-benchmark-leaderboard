@@ -418,6 +418,12 @@ function renderTable() {
     return;
   }
 
+  const isCode = state.modality === "code";
+
+  // Toggle Guard Score column header visibility
+  const gsHeader = document.querySelector('th[scope="col"]:nth-child(5)');
+  if (gsHeader) gsHeader.style.display = isCode ? "none" : "";
+
   el.leaderboardBody.innerHTML = runs
     .map((r, i) => {
       const sel = r.runId === state.selectedRunId ? " is-selected" : "";
@@ -442,7 +448,7 @@ function renderTable() {
           </td>
           <td>${typeBadge}</td>
           <td class="metric">${r.parameters ? esc(r.parameters) : '<span class="metric-muted">--</span>'}</td>
-          <td class="metric">${fmtPct(r.aggregate.guardScore)}</td>
+          ${isCode ? "" : `<td class="metric">${fmtPct(r.aggregate.guardScore)}</td>`}
           <td class="metric">${fmtPct(r.aggregate.f1)}</td>
           <td class="metric">${fmtPct(r.aggregate.recall)}</td>
           <td class="metric">${fmtPct(r.aggregate.precision)}</td>
@@ -546,7 +552,7 @@ function renderDetail() {
       ${metaRow("Git Ref", run.gitRef)}
       ${metaRow("Tool Version", run.toolVersion)}
       ${metaRow("Updated", fmtDate(run.runTimestamp))}
-      ${metaRow("Guard Score", fmtPct(run.aggregate.guardScore))}
+      ${state.modality !== "code" ? metaRow("Guard Score", fmtPct(run.aggregate.guardScore)) : ""}
       ${metaRow("Agg F1", fmtPct(run.aggregate.f1))}
       ${metaRow("Agg Recall", fmtPct(run.aggregate.recall))}
       ${metaRow("Agg Precision", fmtPct(run.aggregate.precision))}
@@ -590,9 +596,10 @@ function renderCharts() {
   if (!state.dataset) {
     return;
   }
-  LeaderboardCharts.createScatter("scatter-chart", state.dataset.runs);
+  const scatterOpts = state.modality === "code" ? { yMetric: "f1" } : {};
+  LeaderboardCharts.createScatter("scatter-chart", state.dataset.runs, scatterOpts);
   if (state.modality === "code") {
-    LeaderboardCharts.createThroughputScatter("throughput-scatter-chart", state.dataset.runs);
+    LeaderboardCharts.createThroughputScatter("throughput-scatter-chart", state.dataset.runs, scatterOpts);
   }
   LeaderboardCharts.createBarCharts(state.dataset.runs);
 }
@@ -694,7 +701,7 @@ function latestRunForModel(modelName) {
 
 function renderCompareMetrics(runs) {
   const metricDefs = [
-    { label: "Guard Score", key: "guardScore", fmt: fmtPct },
+    ...(state.modality !== "code" ? [{ label: "Guard Score", key: "guardScore", fmt: fmtPct }] : []),
     { label: "F1", key: "f1", fmt: fmtPct },
     { label: "Recall", key: "recall", fmt: fmtPct },
     { label: "Precision", key: "precision", fmt: fmtPct },
@@ -965,9 +972,10 @@ function bindControls() {
     latCanvas.style.display = showThroughput ? "none" : "";
     tpCanvas.style.display = showThroughput ? "" : "none";
     titleMetric.textContent = showThroughput ? "Throughput" : "Latency";
+    const yName = state.modality === "code" ? "F1" : "Guard Score";
     subtitle.textContent = showThroughput
-      ? "Top-right is best: high Guard Score, high output tok/s."
-      : "Top-left is best: high Guard Score, low latency.";
+      ? `Top-right is best: high ${yName}, high output tok/s.`
+      : `Top-left is best: high ${yName}, low latency.`;
     labelLat.classList.toggle("switch-label--active", !showThroughput);
     labelTp.classList.toggle("switch-label--active", showThroughput);
   });
@@ -1062,7 +1070,10 @@ async function switchModality() {
     if (toggleWrap) toggleWrap.style.display = "none";
     if (toggleInput) toggleInput.checked = false;
     if (titleMetric) titleMetric.textContent = "Latency";
-    if (subtitle) subtitle.textContent = "Top-left is best: high Guard Score, low latency.";
+    const titleY = document.getElementById("scatter-title-y");
+    const yName = state.modality === "code" ? "F1" : "Guard Score";
+    if (titleY) titleY.textContent = yName;
+    if (subtitle) subtitle.textContent = `Top-left is best: high ${yName}, low latency.`;
     if (labelLat) labelLat.classList.add("switch-label--active");
     if (labelTp) labelTp.classList.remove("switch-label--active");
 
@@ -1071,8 +1082,12 @@ async function switchModality() {
       loadModelsMeta(),
     ]);
     state.selectedRunId = null;
-    state.sortKey = state.modality === "code" ? "guardScore" : "f1";
-    if (el.sortSelect) el.sortSelect.value = state.sortKey;
+    state.sortKey = "f1";
+    if (el.sortSelect) {
+      el.sortSelect.value = state.sortKey;
+      const gsOpt = el.sortSelect.querySelector('option[value="guardScore"]');
+      if (gsOpt) gsOpt.style.display = state.modality === "code" ? "none" : "";
+    }
     el.compareSelects.forEach((s) => { s.value = ""; });
     setDataset(payload, "Committed data", meta);
   } catch (err) {

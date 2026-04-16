@@ -99,7 +99,10 @@ const LeaderboardCharts = (() => {
 
   /* ───────── SCATTER: F1 vs Latency ───────── */
 
-  function createScatter(canvasId, runs) {
+  function createScatter(canvasId, runs, opts) {
+    const yKey = (opts && opts.yMetric) || "guardScore";
+    const yLabel = yKey === "f1" ? "F1 (%)" : "Guard Score (%)";
+    const yTooltip = yKey === "f1" ? "F1" : "Guard Score";
     const ctx = document.getElementById(canvasId);
     if (!ctx) {
       return;
@@ -110,10 +113,10 @@ const LeaderboardCharts = (() => {
     }
 
     const pointData = runs
-      .filter((r) => r.avgLatencyMs != null && r.aggregate.guardScore != null)
+      .filter((r) => r.avgLatencyMs != null && r.aggregate[yKey] != null)
       .map((r, i) => ({
         x: r.avgLatencyMs,
-        y: Number(r.aggregate.guardScore) * 100,
+        y: Number(r.aggregate[yKey]) * 100,
         label: r.modelName,
         isVirtue: isVirtueModel(r.modelName),
         bgColor: colorForModel(r.modelName, i),
@@ -178,7 +181,7 @@ const LeaderboardCharts = (() => {
           y: {
             title: {
               display: true,
-              text: "Guard Score (%)",
+              text: yLabel,
               color: COLORS.textSub,
               font: { family: "Inter", size: 12, weight: "500" },
             },
@@ -202,7 +205,7 @@ const LeaderboardCharts = (() => {
               },
               label: (item) => {
                 return [
-                  `Guard Score: ${item.parsed.y.toFixed(1)}%`,
+                  `${yTooltip}: ${item.parsed.y.toFixed(1)}%`,
                   `Latency: ${item.parsed.x.toLocaleString()} ms`,
                 ];
               },
@@ -400,7 +403,10 @@ const LeaderboardCharts = (() => {
 
   /* ───────── SCATTER: Guard Score vs Throughput ───────── */
 
-  function createThroughputScatter(canvasId, runs) {
+  function createThroughputScatter(canvasId, runs, opts) {
+    const yKey = (opts && opts.yMetric) || "guardScore";
+    const yLabel = yKey === "f1" ? "F1 (%)" : "Guard Score (%)";
+    const yTooltip = yKey === "f1" ? "F1" : "Guard Score";
     const ctx = document.getElementById(canvasId);
     if (!ctx) {
       return;
@@ -411,10 +417,10 @@ const LeaderboardCharts = (() => {
     }
 
     const pointData = runs
-      .filter((r) => r.outputTokensPerSec != null && r.aggregate.guardScore != null)
+      .filter((r) => r.outputTokensPerSec != null && r.aggregate[yKey] != null)
       .map((r, i) => ({
         x: Number(r.outputTokensPerSec),
-        y: Number(r.aggregate.guardScore) * 100,
+        y: Number(r.aggregate[yKey]) * 100,
         label: r.modelName,
         isVirtue: isVirtueModel(r.modelName),
         bgColor: colorForModel(r.modelName, i),
@@ -482,7 +488,7 @@ const LeaderboardCharts = (() => {
           y: {
             title: {
               display: true,
-              text: "Guard Score (%)",
+              text: yLabel,
               color: COLORS.textSub,
               font: { family: "Inter", size: 12, weight: "500" },
             },
@@ -506,7 +512,7 @@ const LeaderboardCharts = (() => {
               },
               label: (item) => {
                 return [
-                  `Guard Score: ${item.parsed.y.toFixed(1)}%`,
+                  `${yTooltip}: ${item.parsed.y.toFixed(1)}%`,
                   `Throughput: ${item.parsed.x.toFixed(1)} tok/s`,
                 ];
               },
