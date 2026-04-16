@@ -52,55 +52,6 @@
       ]
     },
     {
-      "run_id": "2026-04-03-gpt-5.3-code-vuln-16k",
-      "run_name": "GPT-5.3 - Code Vuln Benchmark (16K)",
-      "model_name": "GPT-5.3",
-      "provider": "OpenAI",
-      "adapter": "openai_compatible",
-      "benchmark_pack": "code_vuln-v1",
-      "status": "completed",
-      "run_timestamp": "2026-04-03T00:00:00+00:00",
-      "tool_version": "0.1.0",
-      "git_ref": "main",
-      "aggregate": {
-        "guard_score": 0.6963,
-        "accuracy": 0.7001,
-        "precision": 0.6647,
-        "recall": 0.7007,
-        "f1": 0.6963
-      },
-      "datasets": [
-        {
-          "name": "VulnLLM-R Function Level (C)",
-          "accuracy": 0.7598,
-          "precision": 0.6661,
-          "recall": 0.787,
-          "f1": 0.7551
-        },
-        {
-          "name": "VulnLLM-R Function Level (Python)",
-          "accuracy": 0.6419,
-          "precision": 0.6265,
-          "recall": 0.7027,
-          "f1": 0.6406
-        },
-        {
-          "name": "VulnLLM-R Function Level (Java)",
-          "accuracy": 0.8989,
-          "precision": 0.8661,
-          "recall": 0.946,
-          "f1": 0.8985
-        },
-        {
-          "name": "VulnLLM-R Repo Level (C)",
-          "accuracy": 0.5,
-          "precision": 0.5,
-          "recall": 0.3673,
-          "f1": 0.491
-        }
-      ]
-    },
-    {
       "run_id": "2026-04-03-gpt-5.4-high-code-vuln-16k",
       "run_name": "GPT-5.4 (high) - Code Vuln Benchmark (16K)",
       "model_name": "GPT-5.4 (high)",
@@ -249,8 +200,8 @@
     },
     {
       "run_id": "2026-04-03-gpt-5.4-code-vuln-16k",
-      "run_name": "GPT-5.4 - Code Vuln Benchmark (16K)",
-      "model_name": "GPT-5.4",
+      "run_name": "GPT-5.4 (non-thinking) - Code Vuln Benchmark (16K)",
+      "model_name": "GPT-5.4 (non-thinking)",
       "provider": "OpenAI",
       "adapter": "openai_compatible",
       "benchmark_pack": "code_vuln-v1",

@@ -23,8 +23,7 @@ OUTPUT_PATH = (
 # Map model directory names → (model_name, provider, adapter)
 MODEL_MAP = {
     "gpt-4o": ("GPT-4o", "OpenAI", "openai_compatible"),
-    "gpt-5.3": ("GPT-5.3", "OpenAI", "openai_compatible"),
-    "gpt-5.4": ("GPT-5.4", "OpenAI", "openai_compatible"),
+    "gpt-5.4": ("GPT-5.4 (non-thinking)", "OpenAI", "openai_compatible"),
     "gpt-5.4-high": ("GPT-5.4 (high)", "OpenAI", "openai_compatible"),
     "claude-haiku-4.5": ("Claude Haiku 4.5", "Anthropic", "anthropic"),
     "claude-opus-4.6": ("Claude Opus 4.6", "Anthropic", "anthropic"),
