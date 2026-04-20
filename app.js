@@ -20,7 +20,7 @@ const state = {
   pack: "all",
   modelType: "all",
   latestOnly: false,
-  modality: "text",
+  modality: "code",
 };
 
 const el = {
