@@ -44,21 +44,12 @@
       <div class="section-header">
         <div>
           <span class="eyebrow">Performance Overview</span>
-          <h2 class="heading-display" id="scatter-title"><span id="scatter-title-y">Guard Score</span> vs <span class="text-gradient" id="scatter-title-metric">Latency</span></h2>
+          <h2 class="heading-display" id="scatter-title"><span id="scatter-title-y">Guard Score</span> vs <span class="text-gradient">Latency</span></h2>
           <p class="subtext-sm" id="scatter-subtitle">Top-left is best: high Guard Score, low latency.</p>
-        </div>
-        <div id="scatter-toggle-wrap" class="scatter-switch" style="display:none;">
-          <span class="switch-label switch-label--active" id="switch-label-latency">Latency</span>
-          <label class="toggle-switch">
-            <input type="checkbox" id="scatter-toggle">
-            <span class="toggle-slider"></span>
-          </label>
-          <span class="switch-label" id="switch-label-throughput">Throughput</span>
         </div>
       </div>
       <div class="card-dark chart-card">
         <canvas id="scatter-chart"></canvas>
-        <canvas id="throughput-scatter-chart" style="display:none;"></canvas>
       </div>
     </section>
 
@@ -303,14 +294,7 @@
           <span class="pdf-modal-label">Include in export</span>
           <div class="pdf-modal-checks">
             <label><input type="checkbox" id="pdf-inc-table" checked> Leaderboard Table</label>
-            <label class="pdf-scatter-label">
-              <input type="checkbox" id="pdf-inc-scatter" checked> Scatter Plot
-              <span class="pdf-scatter-type" id="pdf-scatter-type-wrap" style="display:none;">
-                <span class="pdf-scatter-sep">—</span>
-                <label class="pdf-radio"><input type="radio" name="pdf-scatter-type" value="latency" checked> Latency</label>
-                <label class="pdf-radio"><input type="radio" name="pdf-scatter-type" value="throughput"> Throughput</label>
-              </span>
-            </label>
+            <label><input type="checkbox" id="pdf-inc-scatter" checked> Scatter Plot</label>
             <label><input type="checkbox" id="pdf-inc-bars" checked> Bar Charts</label>
             <label><input type="checkbox" id="pdf-inc-radar" checked> Radar Comparison</label>
           </div>

@@ -54,15 +54,6 @@ const PdfExport = (() => {
     document.getElementById("pdf-inc-bars").checked = true;
     document.getElementById("pdf-inc-radar").checked = true;
 
-    // Show scatter type radios only for code modality
-    const scatterTypeWrap = document.getElementById("pdf-scatter-type-wrap");
-    if (scatterTypeWrap) {
-      scatterTypeWrap.style.display = state.modality === "code" ? "" : "none";
-    }
-    // Reset to latency
-    const latRadio = document.querySelector('input[name="pdf-scatter-type"][value="latency"]');
-    if (latRadio) latRadio.checked = true;
-
     overlay.style.display = "flex";
     document.body.style.overflow = "hidden";
 
@@ -98,11 +89,9 @@ const PdfExport = (() => {
         const selectedDatasets = new Set(
           [...datasetList.querySelectorAll("input:checked")].map((cb) => cb.value)
         );
-        const scatterType = document.querySelector('input[name="pdf-scatter-type"]:checked')?.value || "latency";
         const sections = {
           table: document.getElementById("pdf-inc-table").checked,
           scatter: document.getElementById("pdf-inc-scatter").checked,
-          scatterType,
           bars: document.getElementById("pdf-inc-bars").checked,
           radar: document.getElementById("pdf-inc-radar").checked,
         };
@@ -431,15 +420,9 @@ const PdfExport = (() => {
 
     // Scatter plot
     if (sections.scatter) {
-      const useThroughput = sections.scatterType === "throughput" && instances.throughputScatter;
-      const chartInst = useThroughput ? instances.throughputScatter : instances.scatter;
-      const chartCanvasId = useThroughput ? "throughput-scatter-chart" : "scatter-chart";
-      const chartTitle = useThroughput ? "Guard Score vs Throughput" : "Guard Score vs Latency";
-
-      // Temporarily show the canvas if hidden (throughput may be display:none)
-      const chartCanvas = document.getElementById(chartCanvasId);
-      const wasHidden = chartCanvas && chartCanvas.style.display === "none";
-      if (wasHidden) chartCanvas.style.display = "";
+      const chartInst = instances.scatter;
+      const chartCanvasId = "scatter-chart";
+      const chartTitle = "Guard Score vs Latency";
 
       const scatterImg = withPrintTheme(chartInst, () => {
         LeaderboardCharts.COLORS.textSub = "#555555";
@@ -450,9 +433,6 @@ const PdfExport = (() => {
       LeaderboardCharts.COLORS.textSub = origTextSub;
       LeaderboardCharts.COLORS.lavender = origLavender;
       if (chartInst) chartInst.update("none");
-
-      // Restore hidden state
-      if (wasHidden && chartCanvas) chartCanvas.style.display = "none";
 
       if (scatterImg && scatterImg.data) {
         if (!needsFirstPage) doc.addPage(); else needsFirstPage = false;

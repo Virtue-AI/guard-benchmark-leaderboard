@@ -598,9 +598,6 @@ function renderCharts() {
   }
   const scatterOpts = state.modality === "code" ? { yMetric: "f1" } : {};
   LeaderboardCharts.createScatter("scatter-chart", state.dataset.runs, scatterOpts);
-  if (state.modality === "code") {
-    LeaderboardCharts.createThroughputScatter("throughput-scatter-chart", state.dataset.runs, scatterOpts);
-  }
   LeaderboardCharts.createBarCharts(state.dataset.runs);
 }
 
@@ -959,27 +956,6 @@ function bindControls() {
     });
   });
 
-  // Scatter toggle: Latency <-> Throughput
-  document.getElementById("scatter-toggle")?.addEventListener("change", (e) => {
-    const showThroughput = e.target.checked;
-    const latCanvas = document.getElementById("scatter-chart");
-    const tpCanvas = document.getElementById("throughput-scatter-chart");
-    const titleMetric = document.getElementById("scatter-title-metric");
-    const subtitle = document.getElementById("scatter-subtitle");
-    const labelLat = document.getElementById("switch-label-latency");
-    const labelTp = document.getElementById("switch-label-throughput");
-
-    latCanvas.style.display = showThroughput ? "none" : "";
-    tpCanvas.style.display = showThroughput ? "" : "none";
-    titleMetric.textContent = showThroughput ? "Throughput" : "Latency";
-    const yName = state.modality === "code" ? "F1" : "Guard Score";
-    subtitle.textContent = showThroughput
-      ? `Top-right is best: high ${yName}, high output tok/s.`
-      : `Top-left is best: high ${yName}, low latency.`;
-    labelLat.classList.toggle("switch-label--active", !showThroughput);
-    labelTp.classList.toggle("switch-label--active", showThroughput);
-  });
-
   el.searchInput.addEventListener("input", (e) => {
     state.search = e.target.value.trim();
     updateFilters();
@@ -1056,26 +1032,11 @@ async function resetToCommitted() {
 
 async function switchModality() {
   try {
-    // Reset scatter toggle to latency view
-    const latCanvas = document.getElementById("scatter-chart");
-    const tpCanvas = document.getElementById("throughput-scatter-chart");
-    const toggleWrap = document.getElementById("scatter-toggle-wrap");
-    const toggleInput = document.getElementById("scatter-toggle");
-    const titleMetric = document.getElementById("scatter-title-metric");
-    const subtitle = document.getElementById("scatter-subtitle");
-    const labelLat = document.getElementById("switch-label-latency");
-    const labelTp = document.getElementById("switch-label-throughput");
-    if (latCanvas) latCanvas.style.display = "";
-    if (tpCanvas) tpCanvas.style.display = "none";
-    if (toggleWrap) toggleWrap.style.display = "none";
-    if (toggleInput) toggleInput.checked = false;
-    if (titleMetric) titleMetric.textContent = "Latency";
     const titleY = document.getElementById("scatter-title-y");
     const yName = state.modality === "code" ? "F1" : "Guard Score";
     if (titleY) titleY.textContent = yName;
+    const subtitle = document.getElementById("scatter-subtitle");
     if (subtitle) subtitle.textContent = `Top-left is best: high ${yName}, low latency.`;
-    if (labelLat) labelLat.classList.add("switch-label--active");
-    if (labelTp) labelTp.classList.remove("switch-label--active");
 
     const [payload, meta] = await Promise.all([
       loadCommittedData(),
