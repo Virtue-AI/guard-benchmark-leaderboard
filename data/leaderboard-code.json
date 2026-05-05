@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-07T18:25:55Z",
+  "generated_at": "2026-05-05T19:41:45Z",
   "schema_version": 1,
   "runs": [
     {
@@ -440,6 +440,104 @@
           "precision": 0.3281,
           "recall": 0.2143,
           "f1": 0.3688
+        }
+      ]
+    },
+    {
+      "run_id": "2026-04-30-claude-opus-4.7-code-vuln-16k",
+      "run_name": "Claude Opus 4.7 - Code Vuln Benchmark (16K)",
+      "model_name": "Claude Opus 4.7",
+      "provider": "Anthropic",
+      "adapter": "anthropic",
+      "benchmark_pack": "code_vuln-v1",
+      "status": "completed",
+      "run_timestamp": "2026-04-30T00:00:00+00:00",
+      "tool_version": "0.1.0",
+      "git_ref": "main",
+      "aggregate": {
+        "guard_score": 0.7039,
+        "accuracy": 0.706,
+        "precision": 0.6503,
+        "recall": 0.816,
+        "f1": 0.7039
+      },
+      "datasets": [
+        {
+          "name": "VulnLLM-R Function Level (C)",
+          "accuracy": 0.6981,
+          "precision": 0.5813,
+          "recall": 0.8462,
+          "f1": 0.6979
+        },
+        {
+          "name": "VulnLLM-R Function Level (Python)",
+          "accuracy": 0.723,
+          "precision": 0.6941,
+          "recall": 0.7973,
+          "f1": 0.7214
+        },
+        {
+          "name": "VulnLLM-R Function Level (Java)",
+          "accuracy": 0.8518,
+          "precision": 0.7828,
+          "recall": 0.9778,
+          "f1": 0.849
+        },
+        {
+          "name": "VulnLLM-R Repo Level (C)",
+          "accuracy": 0.551,
+          "precision": 0.5431,
+          "recall": 0.6429,
+          "f1": 0.5472
+        }
+      ]
+    },
+    {
+      "run_id": "2026-05-01-gpt-5.5-high-code-vuln-16k",
+      "run_name": "GPT-5.5 (high) - Code Vuln Benchmark (16K)",
+      "model_name": "GPT-5.5 (high)",
+      "provider": "OpenAI",
+      "adapter": "openai_compatible",
+      "benchmark_pack": "code_vuln-v1",
+      "status": "partial",
+      "run_timestamp": "2026-05-01T00:00:00+00:00",
+      "tool_version": "0.1.0",
+      "git_ref": "main",
+      "aggregate": {
+        "guard_score": 0.7154,
+        "accuracy": 0.7165,
+        "precision": 0.6744,
+        "recall": 0.797,
+        "f1": 0.7154
+      },
+      "datasets": [
+        {
+          "name": "VulnLLM-R Function Level (C)",
+          "accuracy": 0.7191,
+          "precision": 0.5995,
+          "recall": 0.8755,
+          "f1": 0.7189
+        },
+        {
+          "name": "VulnLLM-R Function Level (Python)",
+          "accuracy": 0.6554,
+          "precision": 0.6322,
+          "recall": 0.7432,
+          "f1": 0.6527
+        },
+        {
+          "name": "VulnLLM-R Function Level (Java)",
+          "accuracy": 0.9709,
+          "precision": 0.9472,
+          "recall": 0.9979,
+          "f1": 0.9708
+        },
+        {
+          "name": "VulnLLM-R Repo Level (C)",
+          "accuracy": 0.5204,
+          "precision": 0.5185,
+          "recall": 0.5714,
+          "f1": 0.5192
         }
       ]
     }
